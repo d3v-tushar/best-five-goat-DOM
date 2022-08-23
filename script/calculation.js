@@ -36,3 +36,26 @@ function setValueToElement(setElementId, value){
     const elementTextString = elementText.innerText;
     elementText.innerText = value;
 }
+
+// Reset Button Function
+function resetFunction(){
+    const input1 = document.getElementById('perplayer-field');
+    const input1Value = input1.value;
+    input1.value = "";
+
+    const element1 = document.getElementById('player-total');
+    const element1Value = element1.innerText;
+    element1.innerText = "00";
+
+    const input2 = document.getElementById('manager-field');
+    const input2Value = input2.value;
+    input2.value = "";
+
+    const input3 = document.getElementById('coach-field');
+    const input3Value = input3.value;
+    input3.value = "";
+
+    const element2 = document.getElementById('total-cost');
+    const element2Value = element2.innerText;
+    element2.innerText = "00"
+}

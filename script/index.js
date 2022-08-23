@@ -11,14 +11,30 @@ document.getElementById('btn-mbappe').addEventListener('click', function(){
 })
 
 // OnClick Player Selection Function
+function elementLength(){
+    const li = document.querySelectorAll('li');
+    for(lis of li){
+    }
+    return li.length;
+}
+const playerCount = elementLength();
+console.log(elementLength());
+
 function topFivePlayers(playerName, playerButtonId){
+    if(playerCount === 6){
+        alert('Maximum Player Reached')
+    }
+    else{
     const playersName = document.getElementById(playerName);
     const playerValue = playersName.innerText;
     const addPlayers = document.createElement('li');
     addPlayers.innerText = playerValue;
     const playersContainer = document.getElementById('player-box');
+    playersContainer.childNodes.length;
+    console.log(playersContainer);
     playersContainer.appendChild(addPlayers);
     const disableButton = document.getElementById(playerButtonId);
     disableButton.setAttribute("disabled", "");
-    elementLength()
+    elementLength();
+    }
 }
