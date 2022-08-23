@@ -14,17 +14,13 @@
     display: flex;
 }
 body{
-    background-color:#151515;
+    background-color:#191919;
     margin: auto;
     padding: auto;
 }
 
 .mid-container{
-    background-color:#151515;
-    /* width: auto; */
-}
-#mid-sec{
-    background-color:#151515;
+    background-color:#191919;
 }
 .marker{
     display: flex;

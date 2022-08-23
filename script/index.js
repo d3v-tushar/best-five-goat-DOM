@@ -1,5 +1,6 @@
 document.getElementById('btn-messi').addEventListener('click', function(){
     topFivePlayers('leo-messi', 'btn-messi');
+    
 })
 
 document.getElementById('btn-neymar').addEventListener('click', function(){
@@ -11,18 +12,30 @@ document.getElementById('btn-mbappe').addEventListener('click', function(){
 })
 
 // OnClick Player Selection Function
-function elementLength(){
-    const li = document.querySelectorAll('li');
-    for(lis of li){
-    }
-    return li.length;
-}
-const playerCount = elementLength();
-console.log(elementLength());
+// function elementLength(){
+//     const li = document.querySelectorAll('li');
+//     for(lis of li){
+//     }
+//     return li.length;
+// }
+// const playerCount = elementLength();
+// console.log(elementLength());
+
+// function topFivePlayers(playerName, playerButtonId){
+//     const playersName = document.getElementById(playerName);
+//     const playerValue = playersName.innerText;
+//     const addPlayers = document.createElement('li');
+//     addPlayers.innerText = playerValue;
+//     const playersContainer = document.getElementById('player-box');
+//     playersContainer.appendChild(addPlayers);
+//     const disableButton = document.getElementById(playerButtonId);
+//     disableButton.setAttribute("disabled", "");
+// }
 
 function topFivePlayers(playerName, playerButtonId){
-    if(playerCount === 6){
-        alert('Maximum Player Reached')
+    const playersContainer = document.getElementById('player-box');
+    if(playersContainer.children.length > 4){
+        alert('Maximum Player Reached');
     }
     else{
     const playersName = document.getElementById(playerName);
@@ -30,11 +43,10 @@ function topFivePlayers(playerName, playerButtonId){
     const addPlayers = document.createElement('li');
     addPlayers.innerText = playerValue;
     const playersContainer = document.getElementById('player-box');
-    playersContainer.childNodes.length;
-    console.log(playersContainer);
     playersContainer.appendChild(addPlayers);
     const disableButton = document.getElementById(playerButtonId);
     disableButton.setAttribute("disabled", "");
-    elementLength();
+    const selectedCount = document.getElementById('selectedCount');
+    selectedCount.innerText = playersContainer.children.length;
     }
 }

@@ -8,27 +8,29 @@
     <link rel="stylesheet" href="style.css">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- FontAwesome Kit -->
+    <script src="https://kit.fontawesome.com/85754d5be1.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <!-- <header>
+  <header>
         <section class="container">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="#">Navbar</a>
+                  <a class="navbar-brand fs-3 fw-bold" href="#">G.O.A.T</a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link aria-current="page" href="#">Home</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#">Live</a>
                       </li>
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Dropdown
+                          Services
                         </a>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="#">Action</a></li>
@@ -38,7 +40,7 @@
                         </ul>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link">Disabled</a>
+                        <a class="nav-link">About Us</a>
                       </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -49,13 +51,13 @@
                 </div>
             </nav>
         </section>
-    </header> -->
+    </header>
     <main class="container">
         <section>
             <div class="container top-section text-center d-flex justify-content-center text-light align-items-center">
               <div>
                 <h1>Select Your Best Five</h1>
-              <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit <br> officia consequat duis enim velit mollit. Exercitation veniam consequat sunt <br> nostrud amet.</p>
+              <p>Amet minim mollit non deserunt ullamco est sit aliqua <br> dolor do amet sint. Velit officia consequat duis enim <br> velit mollit. Exercitation veniam consequat <br> sunt nostrud amet.</p>
               </div>
             </div>
         </section>
@@ -130,29 +132,29 @@
               </div>
             </div>
             <div class="card bg-black text-white" style="width: 16rem;">
-              <img src="images/players/1.png" class="card-img-top" alt="...">
+              <img src="images/players/7.png" class="card-img-top" alt="...">
               <div class="text-center card-body mt-4">
-                <h5 class="card-title">Lionel Messi</h5>
+                <h5 id="cr7" class="card-title">Cristiano Ronaldo</h5>
                 <p class="card-text">36 Gaols . 126 Assist</p>
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary"
+                  <button id="btn-cr7" onclick="topFivePlayers('cr7', 'btn-cr7')" type="button" class="btn btn-primary"
         style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 3rem; --bs-btn-font-size: 1rem;">SELECT</button>
                 </div>
               </div>
             </div>
             <div class="card bg-black text-white" style="width: 16rem;">
-              <img src="images/players/1.png" class="card-img-top" alt="...">
+              <img src="images/players/8.png" class="card-img-top" alt="...">
               <div class="text-center card-body mt-4">
-                <h5 class="card-title">Lionel Messi</h5>
+                <h5 id="ozil" class="card-title">Mesut Özil</h5>
                 <p class="card-text">36 Gaols . 126 Assist</p>
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary"
+                  <button id="btn-ozil" onclick="topFivePlayers('ozil', 'btn-ozil')" type="button" class="btn btn-primary"
         style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 3rem; --bs-btn-font-size: 1rem;">SELECT</button>
                 </div>
               </div>
             </div>
             <div class="card bg-black text-white" style="width: 16rem;">
-              <img src="images/players/1.png" class="card-img-top" alt="...">
+              <img src="images/players/9.png" class="card-img-top" alt="...">
               <div class="text-center card-body mt-4">
                 <h5 class="card-title">Lionel Messi</h5>
                 <p class="card-text">36 Gaols . 126 Assist</p>
@@ -168,14 +170,9 @@
           <div class="my-4 mx-auto aside-container">
             <div class="card bg-black calculation-area" style="width: 16rem; height: 22.5rem;">
               <div class="card-body">
-                <h3 class="text-white text-center card-title my-3">Selected-V</h3>
+                <h3 class="text-white text-center card-title my-3">Selected- <span id="selectedCount">0</span></h3>
                 <div class="marker"><img src="images/marker.png" alt=""></div>
                 <ol id="player-box" class="text-white-50 fs-4 mt-4 text-start">
-                  <!-- <li>Player-1</li>
-                  <li>Player-2</li>
-                  <li>Player-3</li>
-                  <li>Player-4</li>
-                  <li>Player-5</li> -->
                 </ol>
               </div>
             </div>
@@ -188,7 +185,7 @@
                  <div class="d-flex justify-content-center align-items-center mb-3 my-2"><button id="btn-calculate" type="button" class="btn btn-primary" style="--bs-btn-padding-y: 0.55rem; --bs-btn-padding-x: 4rem; --bs-btn-font-size: 1.25rem;">
                   Calculate
                 </button></div>
-                <div class="d-flex justify-content-between align-items-center mt-3"><p class="fs-5 fw-semibold mx-2 text-light">Player Expenses</p><p class="text-warning fs-5">$<span id="player-total">00</span></p>
+                <div class="d-flex justify-content-between align-items-center mt-3"><p class="fs-5 fw-semibold mx-2 text-light">Player Expenses :</p><p class="text-warning fs-5">$<span id="player-total">00</span></p>
                 </div>
                 <div class="d-flex justify-content-between mt-2"><p class="fs-5 fw-semibold mx-2 text-light">Manager</p> <input type="text" value="" class="input-field text-light" id="manager-field">
                 </div>
@@ -197,7 +194,7 @@
                 <div class="d-flex justify-content-center my-2"><button id="btn-total" type="button" class="btn btn-primary" style="--bs-btn-padding-y: 0.55rem; --bs-btn-padding-x: 5.5rem; --bs-btn-font-size: 1.25rem;">
                  Total
                </button></div>
-               <div class="d-flex justify-content-between align-items-center mt-3"><p class="fs-5 fw-semibold mx-2 text-light">Player Expenses</p><p class="text-warning fs-5">$<span id="total-cost">00</span></p> 
+               <div class="d-flex justify-content-between align-items-center mt-3"><p class="fs-5 fw-semibold mx-2 text-light">Total Expenses :</p><p class="text-warning fs-5">$<span id="total-cost">00</span></p> 
                </div>
               </div>
               <button id="btn-reset" type="button" class="btn btn-danger" onclick="resetFunction()" style="--bs-btn-padding-y: 0.55rem; --bs-btn-padding-x: 0.25rem; --bs-btn-font-size: 1.15rem;">
@@ -207,6 +204,43 @@
             </div>
           </div></div>
         </section>
+        <!-- Footer Section -->
+<footer class="bg-black text-center text-white">
+  <div class="text-center pt-5">
+      <h1 class="fw-bold">G.O.A.T</h1>
+      <p class="my-4"><strong><span>GREATEST </span> <span> OF </span><span> ALL </span><span> TIME</span> </strong></p>
+  </div>
+
+  <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+          <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1" href="fb.com/alex.ornob.1" role="button"><i
+                  class="fab fa-facebook-f"></i></a>
+
+          <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button"><i
+                  class="fab fa-twitter"></i></a>
+
+          <!-- Google -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://myaccount.google.com/" role="button"><i
+                  class="fab fa-google"></i></a>
+
+          <!-- Linkedin -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/" role="button"><i
+                  class="fab fa-linkedin-in"></i></a>
+
+          <!-- Github -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/d3v-tushar" role="button"><i
+                  class="fab fa-github"></i></a>
+      </section>
+  </div>
+
+<!-- Copyright Reserved -->
+<div class="text-center p-5" style="background-color: rgba(0, 0, 0, 0.2);">
+    <a class="text-white text-decoration-none" href="">© 2025 Ornob H. Tushar | All Rights Reserved.</a>
+</div>
+</footer>
     </main>
     <!-- Bootstrap Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

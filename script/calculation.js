@@ -1,7 +1,8 @@
 // Calculate Button On Trigger
 document.getElementById('btn-calculate').addEventListener('click', function(){
     const playerCost = getValueFromField('perplayer-field');
-    const playerTotalCost = playerCost * elementLength();
+    const playersCount = document.getElementById('player-box');
+    const playerTotalCost = playerCost * playersCount.children.length;
     const cost = setValueToElement('player-total', playerTotalCost);
 })
 
@@ -19,7 +20,12 @@ function getValueFromField(fieldId){
     const inputField = document.getElementById(fieldId);
     const inputFieldString = inputField.value;
     const inputFieldValue = parseFloat(inputFieldString);
-    return inputFieldValue;
+    if(isNaN(inputFieldValue) || inputFieldValue < 0){
+        alert('Please Enter Positive Numbers')
+    }
+    else{
+        return inputFieldValue;
+    }
 }
 
 // Function For Getting Value From Element
@@ -39,23 +45,23 @@ function setValueToElement(setElementId, value){
 
 // Reset Button Function
 function resetFunction(){
-    const input1 = document.getElementById('perplayer-field');
-    const input1Value = input1.value;
-    input1.value = "";
+    const perPlayerField = document.getElementById('perplayer-field');
+    const perPlayerFieldValue = perPlayerField.value;
+    perPlayerField.value = "";
 
-    const element1 = document.getElementById('player-total');
-    const element1Value = element1.innerText;
-    element1.innerText = "00";
+    const playerTotal = document.getElementById('player-total');
+    const playerTotalValue = playerTotal.innerText;
+    playerTotal.innerText = "00";
 
-    const input2 = document.getElementById('manager-field');
-    const input2Value = input2.value;
-    input2.value = "";
+    const managerField = document.getElementById('manager-field');
+    const managerFieldValue = managerField.value;
+    managerField.value = "";
 
-    const input3 = document.getElementById('coach-field');
-    const input3Value = input3.value;
-    input3.value = "";
+    const coachField = document.getElementById('coach-field');
+    const coachFieldValue = coachField.value;
+    coachField.value = "";
 
-    const element2 = document.getElementById('total-cost');
-    const element2Value = element2.innerText;
-    element2.innerText = "00"
+    const totalCost = document.getElementById('total-cost');
+    const totalCostValue = totalCost.innerText;
+    totalCost.innerText = "00"
 }
