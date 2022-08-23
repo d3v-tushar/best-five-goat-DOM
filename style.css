@@ -1,7 +1,13 @@
 .top-section{
     width: auto;
     height: 481px;
-    background-color: black;
+    background-image: url(images/cover.png);
+}
+.top-text{
+    color: #FFDF00;
+    font-size: 3rem;
+    margin-top: 15rem;
+    outline: invert;
 }
 .player-grid{
     display: grid;
@@ -9,8 +15,6 @@
     gap: 25px;
 }
 .mid-container{
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr); */
     display: flex;
 }
 body{
